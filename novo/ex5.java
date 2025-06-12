@@ -7,6 +7,10 @@ média ponderada.
 import java.util.Scanner;
 
 public class ex5 {
+  public static void processamento(double[] notas, int[]pesos){
+    double media_ponderada=((notas[0]*pesos[0])+(notas[1]*pesos[1])+(notas[2]*pesos[2]))/(pesos[0]+pesos[1]+pesos[2]);
+    System.out.println("A média ponderada é: "+media_ponderada);
+  }
   public static void main(String[] args) {
     Scanner leitura = new Scanner(System.in);
     double[] notas = new double[3];
@@ -18,12 +22,7 @@ public class ex5 {
       System.out.println("Fale o peso "+(contador+1)+"º");
       pesos[contador]=leitura.nextInt();
       contador=contador+1;
-    };
-    for(double nota:notas){
-      System.out.println("Combo de notas: "+nota);  
-    }
-    for(int peso:pesos){
-      System.out.println("Combo de pesos: "+peso);  
-    }
+    }; 
+    processamento(notas,pesos);
   }
 }
